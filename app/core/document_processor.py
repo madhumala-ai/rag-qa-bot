@@ -209,7 +209,7 @@ class DocumentProcessor:
         filename: str,
     ) -> list[Document]:
         """
-        This method takes an uploaded file stream and its filename, processes it, 
+        This method takes an uploaded file stream and its filename, processes it,
         and returns a list of parsed Document objects for further indexing or embedding.
         """
         """Load and split an uploaded file.
