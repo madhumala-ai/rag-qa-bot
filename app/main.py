@@ -20,6 +20,7 @@ from app.utils.logger import get_logger, setup_logging
 
 settings = get_settings()
 
+
 ###context manager is lifespan of this api
 @asynccontextmanager
 async def lifespan(app: FastAPI):
@@ -71,7 +72,7 @@ app.add_middleware(
 )
 
 # Mount static files
-#app.mount("/static", StaticFiles(directory="static"), name="static")
+# app.mount("/static", StaticFiles(directory="static"), name="static")
 
 # Include routers
 app.include_router(health.router)
@@ -86,6 +87,7 @@ async def root():
         return f.read()
 """
 
+
 @app.get("/", tags=["Root"])
 async def root():
     """Root endpoint."""
@@ -94,6 +96,7 @@ async def root():
         "version": __version__,
         "docs": "/docs",
     }
+
 
 @app.exception_handler(Exception)
 async def global_exception_handler(request: Request, exc: Exception):
